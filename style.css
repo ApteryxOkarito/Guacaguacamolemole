@@ -1,0 +1,25 @@
+#board {
+    background-color: green;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin: 50px auto;
+}
+
+#main-board {
+    background-color: lightseagreen;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    padding: 10px;
+    
+    
+
+}
+
+#main-board tr{
+    background-color: black;
+    
+}
