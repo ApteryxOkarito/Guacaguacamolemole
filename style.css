@@ -10,16 +10,28 @@
     align-items: center;
     background-color: green;
     margin: 0 auto;
-    
+    position: relative;
 }
+
 
 .board-item {
     background-color: aqua;
     padding: 10px;
     height: 140px;
     width: 140px;
-
+    position: absolute;
+    top: 130px;
+    position: relative;
 }
 
+.aguacate{
+    background-color: black;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    visibility: hidden;
+}
 
 
