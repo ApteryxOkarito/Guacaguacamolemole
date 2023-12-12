@@ -1,25 +1,24 @@
+
 #board {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
     background-color: green;
-    width: 500px;
-    height: 500px;
-    position: relative;
-    margin: 50px auto;
+    margin: 0 auto;
+    
 }
 
-#main-board {
-    background-color: lightseagreen;
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 100px;
-    top: 100px;
+.board-item {
+    background-color: aqua;
     padding: 10px;
-    
-    
+    height: 140px;
+    width: 140px;
 
 }
 
-#main-board tr{
-    background-color: black;
-    
-}
+
