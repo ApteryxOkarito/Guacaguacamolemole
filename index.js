@@ -1,11 +1,49 @@
+// //esto hace aparecer y desaparecer UN aguacate
+// let avocado4 = document.getElementsByClassName('avocado')[4]
+// console.log(avocado)
+
+// /*let timerId = setTimeout(function(){
+//     avocado4.style.visibility = "visible";
+// },3000)*/
+
+// function showAvocado4() {
+//     avocado4.style.visibility = "visible";
+//     setTimeout(hideAvocado4, 3000)
+// }
+
+// function hideAvocado4() {
+//     avocado4.style.visibility = "hidden";
+//     setTimeout(showAvocado4, 3000)
+// }
+
+// //showAvocado4()
+
+
 //Hacer que los aguacates aparezcan y desaparezcan
+//Extraemos los aguacates
+let avocadosDom = document.getElementsByClassName('avocado')
 
-let aguacate = document.getElementsByClassName('aguacate')[4]
-console.log(aguacate)
+//console.log(avocadosDom)
 
-let mostrarAguacate = setTimeout(function(){
-    aguacate.style.visibility = "visible";
-},3000)
+
+let anyAvocado;
+
+for (let i = 0; i < avocadosDom.length;i++){
+    anyAvocado = avocadosDom[i];
+    console.log(anyAvocado)
+}
+
+function showAvocado(){
+    anyAvocado.style.visibility = "visible";
+    setTimeout(hideAvocado, 3000)
+}
+
+function hideAvocado(){
+    anyAvocado.style.visibility = "hidden";
+    setTimeout(showAvocado, 3000)
+}
+
+showAvocado(anyAvocado)
 
 
 
@@ -13,7 +51,7 @@ let mostrarAguacate = setTimeout(function(){
 
 //Click a los aguacates
 
-// let aguacates = document.getElementsByClassName('aguacate')
+
 
 // console.log(aguacates)
 
