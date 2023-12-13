@@ -21,29 +21,59 @@
 
 //Hacer que los aguacates aparezcan y desaparezcan
 //Extraemos los aguacates
-let avocadosDom = document.getElementsByClassName('avocado')
+// let avocadosDom = document.getElementsByClassName('avocado')
 
-//console.log(avocadosDom)
+// //console.log(avocadosDom)
 
 
-let anyAvocado;
+// let anyAvocado;
 
-for (let i = 0; i < avocadosDom.length;i++){
-    anyAvocado = avocadosDom[i];
-    console.log(anyAvocado)
+// for (let i = 0; i < avocadosDom.length;i++){
+//     anyAvocado = avocadosDom[i];
+//     console.log(anyAvocado)
+// }
+
+// function showAvocado(){
+//     anyAvocado.style.visibility = "visible";
+//     setTimeout(hideAvocado, 3000)
+// }
+
+// function hideAvocado(){
+//     anyAvocado.style.visibility = "hidden";
+//     setTimeout(showAvocado, 3000)
+// }
+
+// showAvocado(anyAvocado)
+
+//RandomTime
+
+function generateRandomSec(min,max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function showAvocado(){
-    anyAvocado.style.visibility = "visible";
-    setTimeout(hideAvocado, 3000)
+let randomTime = generateRandomSec(3,8)
+
+
+let avocadosDom = document.getElementsByClassName('avocado');
+
+function showAvocado(avocado) {
+    avocado.style.visibility = "visible";
+    setTimeout(function() {
+        hideAvocado(avocado);
+    }, randomTime*1000);
 }
 
-function hideAvocado(){
-    anyAvocado.style.visibility = "hidden";
-    setTimeout(showAvocado, 3000)
+function hideAvocado(avocado) {
+    avocado.style.visibility = "hidden";
+    setTimeout(function() {
+        showAvocado(avocado);
+    }, randomTime*1000);
 }
 
-showAvocado(anyAvocado)
+for (let i = 0; i < avocadosDom.length; i++) {
+    let currentAvocado = avocadosDom[i];
+    showAvocado(currentAvocado);
+}
 
 
 
