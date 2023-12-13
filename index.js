@@ -58,6 +58,7 @@ let avocadosDom = document.getElementsByClassName('avocado');
 
 function showAvocado(avocado) {
     avocado.style.visibility = "visible";
+    let randomTime = generateRandomSec(3,8)
     setTimeout(function() {
         hideAvocado(avocado);
     }, randomTime*1000);
@@ -65,6 +66,7 @@ function showAvocado(avocado) {
 
 function hideAvocado(avocado) {
     avocado.style.visibility = "hidden";
+    let randomTime = generateRandomSec(3,8)
     setTimeout(function() {
         showAvocado(avocado);
     }, randomTime*1000);
