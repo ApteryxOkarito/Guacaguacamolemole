@@ -1,106 +1,65 @@
-// //esto hace aparecer y desaparecer UN aguacate
-// let avocado4 = document.getElementsByClassName('avocado')[4]
-// console.log(avocado)
-
-// /*let timerId = setTimeout(function(){
-//     avocado4.style.visibility = "visible";
-// },3000)*/
-
-// function showAvocado4() {
-//     avocado4.style.visibility = "visible";
-//     setTimeout(hideAvocado4, 3000)
-// }
-
-// function hideAvocado4() {
-//     avocado4.style.visibility = "hidden";
-//     setTimeout(showAvocado4, 3000)
-// }
-
-// //showAvocado4()
-
-
-//Hacer que los aguacates aparezcan y desaparezcan
-//Extraemos los aguacates
-// let avocadosDom = document.getElementsByClassName('avocado')
-
-// //console.log(avocadosDom)
-
-
-// let anyAvocado;
-
-// for (let i = 0; i < avocadosDom.length;i++){
-//     anyAvocado = avocadosDom[i];
-//     console.log(anyAvocado)
-// }
-
-// function showAvocado(){
-//     anyAvocado.style.visibility = "visible";
-//     setTimeout(hideAvocado, 3000)
-// }
-
-// function hideAvocado(){
-//     anyAvocado.style.visibility = "hidden";
-//     setTimeout(showAvocado, 3000)
-// }
-
-// showAvocado(anyAvocado)
-
 //RandomTime
+let avocadosDom = document.getElementsByClassName('avocado')
+let avocaditos = {
+    sprite : 1,
+    isVisible : false
+}
 
-function generateRandomSec(min,max){
+//misma longitud map
+let visibleAvocados = 0
+let maxAvocados = 3
+let timerID = setInterval(checkAvocados, 10) //reducir el tiempo (más adelante)
+
+//esto genera numeros aleatorios 
+function generateRandom(min,max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let randomTime = generateRandomSec(3,8)
-
-
-let avocadosDom = document.getElementsByClassName('avocado');
-
+//esto muestra un aguacate visible y llama al escondido
 function showAvocado(avocado) {
     avocado.style.visibility = "visible";
-    let randomTime = generateRandomSec(3,8)
+    let randomTime = generateRandom(3,5)
+    visibleAvocados ++;
     setTimeout(function() {
         hideAvocado(avocado);
     }, randomTime*1000);
 }
 
+//esto esconde un aguacate y llama al visible 
 function hideAvocado(avocado) {
     avocado.style.visibility = "hidden";
-    let randomTime = generateRandomSec(3,8)
-    setTimeout(function() {
-        showAvocado(avocado);
-    }, randomTime*1000);
+    visibleAvocados --
+    let randomTime = generateRandom(3,5)
 }
 
-for (let i = 0; i < avocadosDom.length; i++) {
-    let currentAvocado = avocadosDom[i];
-    showAvocado(currentAvocado);
+//esto chequea aguacates 
+function checkAvocados(){
+    if(visibleAvocados < maxAvocados){
+    let choosenAvocado = pickHiddenAvocado()
+    showAvocado(choosenAvocado)
+    }
+}
+
+//esto selecciona aguacates de forma aleatoria 
+function pickHiddenAvocado(){
+    let i = generateRandom(0,8)
+    return avocadosDom[i]
 }
 
 
 
 
-
-//Click a los aguacates
-
-
-
-// console.log(aguacates)
-
-
-// function aplastarAguacate(evento){
-
+// function checkAvocados(avocado){
+//     if(visibleAvocados <= maxAvocados){
+//         showAvocado(avocado)
+//     }
 // }
 
-// // addEventListener('click', function(){
-// //     console.log('soy un aguacate')
-// // })
 
 
-// aguacate.onClick = aplastarAguacate
 
-// // aguacate.onClick = function(){
-// //     console.log('soy un aguacate')
-// // }
+
+
+
 
 
