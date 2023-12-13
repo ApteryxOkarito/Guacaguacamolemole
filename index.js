@@ -11,7 +11,6 @@ let mostrarAguacate = setTimeout(function(){
 
 
 
-
 //Click a los aguacates
 
 // let aguacates = document.getElementsByClassName('aguacate')
