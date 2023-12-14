@@ -1,9 +1,14 @@
-//RandomTime
+//objeto aguacate
 let avocadosDom = document.getElementsByClassName('avocado')
 let avocaditos = {
     sprite : 1,
     isVisible : false
 }
+
+var newArray = avocadosDom.map(function(element) {
+	
+})
+console.log(newarray)
 
 //misma longitud map
 let visibleAvocados = 0
