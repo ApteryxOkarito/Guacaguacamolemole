@@ -59,28 +59,11 @@ function pickHiddenAvocado(){
     if (randomAvocado.isHidden === true){
         return randomAvocado
     } else {
-        pickHiddenAvocado()
+        return pickHiddenAvocado()
     }
 }
 
 
-
-//queremos que escoja un aguacate que no esté ya visible, es decir que isHidden = false 
-
-//No queremos que coja uno que está visible, no queremos que coja uno cuyo isHidden = false 
-
-//if avocados.isHidden === false{
-
-//}
-
-//queremos que solo coja aquellos cuyos isHidden = true
- 
-
-// function checkAvocados(avocado){
-//     if(visibleAvocados <= maxAvocados){
-//         showAvocado(avocado)
-//     }
-// }
 
 
 
