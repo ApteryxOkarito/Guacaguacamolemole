@@ -1,14 +1,16 @@
 //objeto aguacate
 let avocadosDom = document.getElementsByClassName('avocado')
-let avocaditos = {
-    sprite : 1,
-    isVisible : false
-}
 
-var newArray = avocadosDom.map(function(element) {
-	
-})
-console.log(newarray)
+
+let avocados = Array.from(avocadosDom).map(function(element) {
+   return {
+        isVisible : false,
+        sprite : element,
+    };
+});
+
+//console.log(avocados)
+
 
 //misma longitud map
 let visibleAvocados = 0
@@ -22,7 +24,9 @@ function generateRandom(min,max){
 
 //esto muestra un aguacate visible y llama al escondido
 function showAvocado(avocado) {
-    avocado.style.visibility = "visible";
+    console.log(avocado)
+    console.log(avocado.sprite)
+    avocado.sprite.style.visibility = "visible";
     let randomTime = generateRandom(3,5)
     visibleAvocados ++;
     setTimeout(function() {
@@ -30,9 +34,10 @@ function showAvocado(avocado) {
     }, randomTime*1000);
 }
 
+
 //esto esconde un aguacate y llama al visible 
 function hideAvocado(avocado) {
-    avocado.style.visibility = "hidden";
+    avocado.sprite.style.visibility = "hidden";
     visibleAvocados --
     let randomTime = generateRandom(3,5)
 }
@@ -48,7 +53,7 @@ function checkAvocados(){
 //esto selecciona aguacates de forma aleatoria 
 function pickHiddenAvocado(){
     let i = generateRandom(0,8)
-    return avocadosDom[i]
+    return avocados[i]
 }
 
 
