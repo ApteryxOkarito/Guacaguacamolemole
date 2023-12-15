@@ -11,11 +11,12 @@
     background-color: rgb(8, 124, 41);
     margin: 0 auto;
     position: relative;
+    background-image: url(./Images/foto\ mantel\ mexicano);
 }
 
 
 .board-item {
-    background-color: rgb(155, 134, 64);
+    
     padding: 10px;
     height: 140px;
     width: 140px;
@@ -23,16 +24,24 @@
     top: 130px;
     position: relative;
     border-radius: 50%;
+    background-image: url(./Images/Imagen\ plato);
+    background-size: cover;
+    
 }
 
 .avocado{
-    background-color: rgb(116, 197, 75);
-    height: 80px;
-    width: 80px;
+    
+    height: 100px;
+    width: 100px;
     position: absolute;
-    left: 40px;
-    top: 40px;
+    left: 30px;
+    top: 20px;
     visibility: hidden;
+    background-image: url(./Images/aguacate\ chulo\ bien);
+    background-size: cover;
+    border-radius: 40%;
 }
 
-
+.avocadosmashed{
+    background-color: blue;
+}

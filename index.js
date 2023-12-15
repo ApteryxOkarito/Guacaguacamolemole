@@ -61,20 +61,19 @@ function pickHiddenAvocado(){
     }
 }
 
-
 //Esto hace que el aguacate que cliquee desaparezca 
 let smashAguacate = avocados.forEach(function(avocado){
     avocado.sprite.addEventListener('click', function(event){
         let clickedAguacate = event.target //ese clicked aguacate tiene que desaparecer visual y lógicamente
+        //avocado.sprite.style.backgroundColor = "blue"
         avocado.sprite.style.visibility = "hidden";
         clickedAguacate.isHidden = true;
     })
-
 })
 
 
-
-
+//Para el smash juguemos con backgroundimage.style y la cambiamos al click 
+//Ojo con el cambio del bacground color que se hace permanente, esto lo tenemos que reinicializar si nos vamos a basar en esto para usar una imagen de fondo. 
 
 
 
