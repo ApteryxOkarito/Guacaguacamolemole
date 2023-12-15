@@ -12,6 +12,7 @@
     margin: 0 auto;
     position: relative;
     background-image: url(./Images/foto\ mantel\ mexicano);
+    
 }
 .board-item {
     padding: 10px;
@@ -40,7 +41,7 @@
     background-size: cover;
 }
 
-#Start{
+#start{
     position: fixed;
     top: 0;
     left: 0;
@@ -51,15 +52,17 @@
     z-index: 9999;
     text-align: center;
     position: relative;
+    display : block;
+
 }
 
-#Start h1 {
+#start h1 {
     font-size: 100px;
     position: absolute;
     top: 200px;
 }
 
-#Start button {
+#start button {
     margin: 700px auto;
     width: 200px;
     height: 100px;

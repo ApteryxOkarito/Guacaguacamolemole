@@ -8,11 +8,13 @@ let avocados = Array.from(avocadosDom).map(function(element) {
     };
 });
 
-//cuando isHidden true, el aguacate está escondido
-//cuando isHiden false, el aguacate está visible
+//Funcionalidad botón start
+let startButton = document.getElementById('startbutton')
+let startScreen = document.getElementById('start')
+startButton.addEventListener('click',function(){
+    startScreen.style.display = "none"
+})
 
-
-//misma longitud map
 let visibleAvocados = 0
 let maxAvocados = 3
 let timerID = setInterval(checkAvocados, 10) //reducir el tiempo (más adelante)
@@ -75,9 +77,5 @@ let smashAguacate = avocados.forEach(function(avocado){
         },800)
     })
 })
-
-
-
-
 
 
