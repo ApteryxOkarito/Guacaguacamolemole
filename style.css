@@ -43,5 +43,6 @@
 }
 
 .avocadosmashed{
-    background-color: blue;
+    background-image: url(./Images/mancha\ verde);
+    background-size: cover;
 }
