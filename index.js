@@ -28,7 +28,7 @@ function generateRandom(min,max){
 function showAvocado(avocado) {
     avocado.sprite.style.visibility = "visible";
     avocado.isHidden = false;
-    let randomTime = generateRandom(3,5)
+    let randomTime = generateRandom(2,4)
     visibleAvocados ++;
     setTimeout(function() {
         hideAvocado(avocado);
@@ -46,7 +46,6 @@ function hideAvocado(avocado) {
 function checkAvocados(){
     if(visibleAvocados < maxAvocados){
     let choosenAvocado = pickHiddenAvocado()
-    //console.log(choosenAvocado)
     showAvocado(choosenAvocado)
     }
 }
@@ -54,7 +53,6 @@ function checkAvocados(){
 //esto selecciona aguacates de forma aleatoria 
 function pickHiddenAvocado(){
     let i = generateRandom(0,8);
-    //console.log(i)
     let randomAvocado = avocados[i]
     if (randomAvocado.isHidden === true){
         return randomAvocado
@@ -64,7 +62,15 @@ function pickHiddenAvocado(){
 }
 
 
+//Esto hace que el aguacate que cliquee desaparezca 
+let smashAguacate = avocados.forEach(function(avocado){
+    avocado.sprite.addEventListener('click', function(event){
+        let clickedAguacate = event.target //ese clicked aguacate tiene que desaparecer visual y lógicamente
+        avocado.sprite.style.visibility = "hidden";
+        clickedAguacate.isHidden = true;
+    })
 
+})
 
 
 
