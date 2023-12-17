@@ -2,11 +2,9 @@
 body{
     margin: 0;
     padding: 0;
+    cursor: url(./Images/punterorecortado.png), auto;
 }
 
-#absolute{
-    cursor: url(./Images/puntero.jpg), auto;
-}
 
 #board {
     height: 100vh;
@@ -77,6 +75,8 @@ body{
     border-radius: 10px;
     border: 10px;
     border-color: red;
+    background-image: url(./Images/textura\ botón);
+    color: rgb(221, 52, 86);
 }
 
 #gameover {
@@ -106,6 +106,5 @@ body{
     border-radius: 10px;
     border: 10px;
     border-color: red;
-
-
+    background-image: url(./Images/textura\ botón);
 }

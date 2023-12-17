@@ -5,7 +5,8 @@ let avocados = Array.from(avocadosDom).map(function(element) {
    return {
         isHidden : true,
         sprite : element,
-        timerAvocado : null
+        timerAvocado : null,
+        timerShowAvocado :null
     };
 });
 let lifes = 1;
@@ -16,13 +17,6 @@ let visibleAvocados = 0
 let maxAvocados = 3
 let timerID //reducir el tiempo (más adelante)
 
-//Puntero cambiado
-
-let absolute = document.getElementById('absolute')
-absolute.addEventListener('mouseover',function(){
-    absolute.style.cursor = 'url("./Images/puntero.jpg"), auto';
-});
-
 //Funcionalidad botón start
 startButton.addEventListener('click',function(){
     startScreen.style.display = "none";
@@ -32,7 +26,7 @@ startButton.addEventListener('click',function(){
 //funcionalidad botón game over
 restartButton.addEventListener('click',function(){
     gameOverScreen.style.display = "none"
-    timerID = setInterval(checkAvocados, 10)
+    timerID = setInterval(checkAvocados,10)
 })
 
 //esto genera numeros aleatorios 
@@ -43,11 +37,9 @@ function generateRandom(min,max){
 
 //esto hace visible un aguacate escondido y luego lo vuelve a esconder (llama a la función que lo esconde)
 function showAvocado(avocado) {
-    console.log(avocado)
     avocado.sprite.style.visibility = "visible";
     avocado.isHidden = false;
-    let randomTime = generateRandom(2,4)
-    visibleAvocados ++;
+    let randomTime = generateRandom(2,5)
     avocado.timerAvocado = setTimeout(function() {
         hideAvocado(avocado);
     }, randomTime*1000);
@@ -63,31 +55,21 @@ function hideAvocado(avocado) {
 
 //esto chequea aguacates (que no haya más de 3 en pantalla a la vez) y las vidas
 function checkAvocados(){
+    
     if(visibleAvocados < maxAvocados){
-    let choosenAvocado = pickHiddenAvocado()
-    showAvocado(choosenAvocado)
+        let randomTime2 = generateRandom(1,3)
+        visibleAvocados ++;
+        let choosenAvocado = pickHiddenAvocado()
+        choosenAvocado.isHidden = false;
+        choosenAvocado.timerShowAvocado = setTimeout(function(){
+        showAvocado(choosenAvocado)
+        },randomTime2*1000)
     }
     if(lifes === 0){
         checkGameOver()
     }
 }
 
-//Funcioanlidad pierde y aparece pantalla de game over
-
-function checkGameOver(){
-    if(lifes === 0){
-    gameOverScreen.style.display = 'block';
-    clearInterval(timerID)
-    
-    avocados.forEach(function(avocado){
-        clearTimeout(avocado.timerAvocado)
-        avocado.isHidden = true
-        avocado.sprite.style.visibility = "hidden"
-    });
-    lifes = 1
-    visibleAvocados = 0    
-    }
-}
 
 //esto selecciona aguacates de forma aleatoria 
 function pickHiddenAvocado(){
@@ -100,20 +82,40 @@ function pickHiddenAvocado(){
     }
 }
 
+//Funcioanlidad pierde y aparece pantalla de game over
+
+function checkGameOver(){
+    if(lifes === 0){
+    gameOverScreen.style.display = 'block';
+    clearInterval(timerID)
+    
+    avocados.forEach(function(avocado){
+        clearTimeout(avocado.timerAvocado)
+        clearTimeout(avocado.timerShowAvocado)
+        avocado.isHidden = true
+        avocado.sprite.style.visibility = "hidden"
+    });
+    lifes = 1
+    visibleAvocados = 0    
+    }
+}
+
+
 //Esto hace que el aguacate que cliquee desaparezca 
-let smashAguacate = avocados.forEach(function(avocado){
+avocados.forEach(function(avocado){
     avocado.sprite.addEventListener('click', function(event){
-        let clickedAguacate = event.target;
-        clearTimeout(clickedAguacate.timerAvocado)
-        clickedAguacate.classList.add("avocadosmashed");
-        //Este setTimeOut se encarga de que aparezca y desaparezca el smashed
-        timerID2 = setTimeout(function(){
-            clickedAguacate.classList.remove("avocadosmashed")
-            clickedAguacate.classList.add("avocado")
-            clickedAguacate.style.visibility = "hidden"
-            clickedAguacate.isHidden = true
-        },800)
-    })
+    let clickedAguacate = event.target;
+    clearTimeout(avocado.timerAvocado)
+    clickedAguacate.classList.add("avocadosmashed");
+    visibleAvocados --
+    //Este setTimeOut se encarga de que aparezca y desaparezca el smashed
+    timerID2 = setTimeout(function(){
+        clickedAguacate.classList.remove("avocadosmashed")
+        clickedAguacate.classList.add("avocado")
+        clickedAguacate.style.visibility = "hidden"
+        avocado.isHidden = true
+    },800)
+})
 })
 
 
