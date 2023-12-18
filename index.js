@@ -1,4 +1,4 @@
-//objeto aguacate
+//Elementos del juego
 let avocadosDom = document.getElementsByClassName('avocado')
 let gameOverScreen = document.getElementById('gameover')
 let avocados = Array.from(avocadosDom).map(function(element) {
@@ -15,6 +15,8 @@ let startScreen = document.getElementById('start')
 let restartButton = document.getElementById('restartbutton')
 let visibleAvocados = 0
 let maxAvocados = 3
+let music = new Audio("./Music/Classic Mariachi .mp3")
+music.play();
 let timerID //reducir el tiempo (más adelante)
 
 
@@ -120,4 +122,7 @@ avocados.forEach(function(avocado){
 })
 
 
-
+// window.onload = function(){
+//     let music = new Audio("./Music/Classic Mariachi .mp3")
+//     music.play();
+// }
