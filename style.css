@@ -14,21 +14,19 @@ body, html{
     gap: 15px;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
     position: relative;
     background-image: url(./Images/foto\ mantel\ mexicano);
 }
+
 .board-item {
     padding: 10px;
     height: 140px;
     width: 140px;
-    position: absolute;
-    top: 40px;
+    margin-top: 25vh;
     position: relative;
     border-radius: 50%;
     background-image: url(./Images/Imagen\ plato);
     background-size: cover;
-    margin: 0 auto;
     align-items: center;
 }
 .avocado{
@@ -86,7 +84,6 @@ body, html{
     text-align: center;
     display : none;
 }
-
 
 #start button {
     margin-top: 85vh;
