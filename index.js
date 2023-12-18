@@ -120,5 +120,3 @@ avocados.forEach(function(avocado){
 
 
 
-
-
