@@ -17,6 +17,7 @@ let visibleAvocados = 0
 let maxAvocados = 3
 let timerID //reducir el tiempo (más adelante)
 
+
 //Funcionalidad botón start
 startButton.addEventListener('click',function(){
     startScreen.style.display = "none";
