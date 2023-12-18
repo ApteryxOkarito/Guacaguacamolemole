@@ -58,7 +58,6 @@ body, html{
 }
 
 #start{
-    background-color: blue;
     position:absolute;
     top: 0;
     left: 0;
@@ -88,8 +87,9 @@ body, html{
     display : none;
 }
 
+
 #start button {
-    margin: 20px auto;
+    margin-top: 85vh;
     width: 200px;
     height: 60px;
     font-size: 20px;
@@ -99,15 +99,14 @@ body, html{
     border-color:rgb(164, 12, 42);
     border-style: solid;
     color: rgb(164, 12, 42);
-    margin: 38% auto;
-    
 
 } 
 
+
  #restartbutton{
-    margin: 20px auto;
-    width: 200px;
-    height: 60px;
+    margin-top: 92vh;
+    width: 300px;
+    height: 47px;
     font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
@@ -115,19 +114,4 @@ body, html{
     border-color:rgb(164, 12, 42);
     border-style: solid;
     color: rgb(164, 12, 42);
-    margin: 47% auto;
-    
-   
-  
 }
-/* .front {
-    display: block;
-  padding: 12px 42px;
-  border-radius: 12px;
-  font-size: 1.25rem;
-  background: hwb(1 6% 16%);
-  color: white;
-  transform: translateY(-6px);
-  font-weight: bold;
-  
-}  */
