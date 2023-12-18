@@ -80,20 +80,44 @@ body, html{
     height: 100vh;
     width: 100vw;
     background-image: url(./Images/pantallasmashed_Mesa\ de\ trabajo\ 1-001.jpg);
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-position: center;
     z-index: 1;
     text-align: center;
     display : none;
 }
 
 #start button {
+    margin: 20px auto;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 3px;
+    border-color:rgb(164, 12, 42);
+    border-style: solid;
+    color: rgb(164, 12, 42);
+    margin: 38% auto;
     
 
 } 
 
  #restartbutton{
-
+    margin: 20px auto;
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 3px;
+    border-color:rgb(164, 12, 42);
+    border-style: solid;
+    color: rgb(164, 12, 42);
+    margin: 47% auto;
+    
+   
   
 }
 /* .front {
