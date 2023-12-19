@@ -62,7 +62,7 @@ function hideAvocado(avocado) {
     lives --
 }
 
-//esto chequea aguacates (que no haya más de 3 en pantalla a la vez) y las vidas
+//Chequea que no haya más de 3 aguacates en pantalla a la vez y las vidas
 function checkAvocados(){
     
     if(visibleAvocados < maxAvocados){
@@ -80,7 +80,7 @@ function checkAvocados(){
 }
 
 
-//esto selecciona aguacates de forma aleatoria 
+//Selección aleatoria de aguacates
 function pickHiddenAvocado(){
     let i = generateRandom(0,8);
     let randomAvocado = avocados[i]
