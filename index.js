@@ -16,9 +16,8 @@ let restartButton = document.getElementById('restartbutton')
 let visibleAvocados = 0
 let maxAvocados = 3
 let timerID //reducir el tiempo (más adelante)
-let backgroundMusic = new Audio("./music/Classic-Mariachi .mp3")
+let backgroundMusic = new Audio("./Music/ClassicMariachi.mp3")
 backgroundMusic.volume = 0.3
-
 function playBackgroundMusic() {
     backgroundMusic.play();
 }
