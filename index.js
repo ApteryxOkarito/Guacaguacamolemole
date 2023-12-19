@@ -17,7 +17,7 @@ let visibleAvocados = 0
 let maxAvocados = 3
 let timerID //reducir el tiempo (más adelante)
 let backgroundMusic = new Audio("./Music/ClassicMariachi.mp3")
-backgroundMusic.volume = 0.3
+backgroundMusic.volume = 0.1
 function playBackgroundMusic() {
     backgroundMusic.play();
 }
