@@ -9,7 +9,7 @@ let avocados = Array.from(avocadosDom).map(function(element) {
         timerShowAvocado :null
     };
 });
-let lifes = 1;
+let lives = 1;
 let startButton = document.getElementById('startbutton')
 let startScreen = document.getElementById('start')
 let restartButton = document.getElementById('restartbutton')
@@ -59,7 +59,7 @@ function hideAvocado(avocado) {
     avocado.sprite.style.visibility = "hidden";
     avocado.isHidden = true;
     visibleAvocados --
-    lifes --
+    lives --
 }
 
 //esto chequea aguacates (que no haya más de 3 en pantalla a la vez) y las vidas
@@ -74,7 +74,7 @@ function checkAvocados(){
         showAvocado(choosenAvocado)
         },randomTime2*1000)
     }
-    if(lifes === 0){
+    if(lives === 0){
         checkGameOver()
     }
 }
@@ -94,7 +94,7 @@ function pickHiddenAvocado(){
 //Funcioanlidad pierde y aparece pantalla de game over
 
 function checkGameOver(){
-    if(lifes === 0){
+    if(lives === 0){
     gameOverScreen.style.display = 'block';
     clearInterval(timerID)
     
@@ -104,7 +104,7 @@ function checkGameOver(){
         avocado.isHidden = true
         avocado.sprite.style.visibility = "hidden"
     });
-    lifes = 1
+    lives = 1
     visibleAvocados = 0    
     }
 }
