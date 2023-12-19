@@ -15,14 +15,21 @@ let startScreen = document.getElementById('start')
 let restartButton = document.getElementById('restartbutton')
 let visibleAvocados = 0
 let maxAvocados = 3
-let music = new Audio("./Music/Classic Mariachi .mp3")
-music.play();
 let timerID //reducir el tiempo (más adelante)
+let backgroundMusic = new Audio("./music/Classic-Mariachi .mp3")
+backgroundMusic.volume = 0.3
 
+function playBackgroundMusic() {
+    backgroundMusic.play();
+}
+
+let smashedSound = new Audio("./Music/smashed.mp3")
+smashedSound.volume = 0.6
 
 //Funcionalidad botón start
 startButton.addEventListener('click',function(){
     startScreen.style.display = "none";
+    playBackgroundMusic();
     timerID = setInterval(checkAvocados, 10)
 })
 
@@ -108,6 +115,7 @@ function checkGameOver(){
 avocados.forEach(function(avocado){
     avocado.sprite.addEventListener('click', function(event){
     let clickedAguacate = event.target;
+    smashedSound.play();
     clearTimeout(avocado.timerAvocado)
     clickedAguacate.classList.add("avocadosmashed");
     visibleAvocados --
@@ -122,7 +130,4 @@ avocados.forEach(function(avocado){
 })
 
 
-// window.onload = function(){
-//     let music = new Audio("./Music/Classic Mariachi .mp3")
-//     music.play();
-// }
+
